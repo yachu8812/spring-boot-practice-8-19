@@ -84,9 +84,9 @@ public class PracticeController {
 
         List<User> response = userService.getUserList(null,1);
 
-        List<User> get = response.stream().sorted(Comparator.comparing(User::getAge))
-                                            .sorted(Comparator.comparing(User::getName))
-                                            .collect(Collectors.toList());
+        List<User> get = response.stream().sorted(Comparator.comparing(User::getId))
+                .sorted(Comparator.comparing(User::getAge))
+                .collect(Collectors.toList());
 
         return get;
     }
